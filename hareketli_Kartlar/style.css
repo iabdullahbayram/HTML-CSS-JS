@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Honk&family=Rubik:ital,wght@1,700&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Honk', system-ui;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .container:hover > .panel:not(:hover){
+    filter: grayscale(100%);
+  }
+
+.panel{
+      background-size: auto 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 80vh;
+      border-radius: 50px;
+      cursor: pointer;
+      flex: 0.5;
+      margin: 10px;
+      position: relative;
+      transition: flex 0.7s ease-in;
+  }
+
+.panel h3{
+    font-size: 40px;
+    position: absolute;
+    bottom: 20px;
+    left: 40%;
+    margin: 0px;
+    opacity: 0;
+    
+}
+
+.panel.active{
+    flex: 5;
+    
+}
+
+
+
+.panel.active h3 {
+    text-decoration: none;
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+.panel.active h3:hover{
+    text-decoration: underline;
+    font-size: 50px;
+    opacity: 0.3;
+    transition: opacity 0.2s ease-in 0.3s;
+    
+}
+
+
+
+@media (max-width: 600px){
+    .container{
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),.panel:nth-of-type(5){
+        display: none;
+    }
+}
